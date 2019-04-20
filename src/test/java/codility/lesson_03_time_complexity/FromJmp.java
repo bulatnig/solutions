@@ -1,4 +1,10 @@
-class Solution {
+package codility.lesson_03_time_complexity;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class FromJmp {
     public int solution(int X, int Y, int D) {
         if (X == Y) {
             return 0;
@@ -11,8 +17,8 @@ class Solution {
         return jumps;
     }
 
-    public static void main(String[] args) {
-        int result = new Solution().solution(10, 85, 30);
-        System.out.println(result);
+    @Test
+    public void test() {
+        assertEquals(3, solution(10, 85, 30));
     }
 }

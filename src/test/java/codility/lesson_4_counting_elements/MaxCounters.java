@@ -1,4 +1,10 @@
-class Solution {
+package codility.lesson_4_counting_elements;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertArrayEquals;
+
+public class MaxCounters {
     public int[] solution(int N, int[] A) {
         int[] counters = new int[N];
         int maxCounter = 0;
@@ -26,12 +32,9 @@ class Solution {
         return counters;
     }
 
-    public static void main(String[] args) {
-        int[] result = new Solution().solution(5, new int[] {3,4,4,6,1,4,4});
-//        int[] result = new Solution().solution(2, new int[] {1, 2});
-        for (int i : result) {
-            System.out.print(i);
-            System.out.print(',');
-        }
+    @Test
+    public void test() {
+        assertArrayEquals(new int[]{3, 2, 2, 4, 2}, solution(5, new int[]{3, 4, 4, 6, 1, 4, 4}));
+        assertArrayEquals(new int[]{1, 1}, solution(2, new int[]{1, 2}));
     }
 }

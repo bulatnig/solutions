@@ -1,6 +1,12 @@
+package codility.lesson_4_counting_elements;
+
+import org.junit.Test;
+
 import java.util.Arrays;
 
-class Solution {
+import static org.junit.Assert.assertEquals;
+
+public class MissingInteger {
     public int solution(int[] A) {
         Arrays.sort(A);
         int expected = 1;
@@ -17,9 +23,10 @@ class Solution {
         return expected;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Solution().solution(new int[]{1, 3, 6, 4, 1, 2}));
-        System.out.println(new Solution().solution(new int[]{1, 2, 3}));
-        System.out.println(new Solution().solution(new int[]{-1, -3}));
+    @Test
+    public void test() {
+        assertEquals(5, solution(new int[]{1, 3, 6, 4, 1, 2}));
+        assertEquals(4, solution(new int[]{1, 2, 3}));
+        assertEquals(1, solution(new int[]{-1, -3}));
     }
 }

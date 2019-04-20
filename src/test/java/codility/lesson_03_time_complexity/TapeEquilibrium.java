@@ -1,4 +1,10 @@
-class Solution {
+package codility.lesson_03_time_complexity;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class TapeEquilibrium {
     public int solution(int[] A) {
         int leftSum = A[0];
         int rightSum = 0;
@@ -20,10 +26,10 @@ class Solution {
         return minDiff;
     }
 
-    public static void main(String[] args) {
-        int result = new Solution().solution(new int[]{5, 6, 2, 4, 1});
-//        int result = new Solution().solution(new int[]{-1000, 1000});
-//        int result = new Solution().solution(new int[]{3, 1, 2, 4, 3});
-        System.out.println(result);
+    @Test
+    public void test() {
+        assertEquals(1, solution(new int[]{3, 1, 2, 4, 3}));
+        assertEquals(4, solution(new int[]{5, 6, 2, 4, 1}));
+        assertEquals(2000, solution(new int[]{-1000, 1000}));
     }
 }

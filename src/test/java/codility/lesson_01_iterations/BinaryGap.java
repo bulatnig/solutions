@@ -1,4 +1,10 @@
-class Solution {
+package codility.lesson_01_iterations;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class BinaryGap {
     public int solution(int N) {
         int n = removeRightEndZeroes(N);
         int maxGap = 0;
@@ -33,6 +39,15 @@ class Solution {
 
     private int rightShift(int n) {
         return n >>> 1;
+    }
+
+    @Test
+    public void test() {
+        assertEquals(2, solution(9));
+        assertEquals(4, solution(529));
+        assertEquals(1, solution(20));
+        assertEquals(0, solution(15));
+        assertEquals(0, solution(32));
     }
 
 }

@@ -1,4 +1,10 @@
-class Solution {
+package codility.lesson_4_counting_elements;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class FrogRiverOne {
     public int solution(int X, int[] A) {
         Integer[] leaves = new Integer[X];
         for (int i = 0; i < A.length; i++) {
@@ -20,10 +26,10 @@ class Solution {
         return max;
     }
 
-    public static void main(String[] args) {
-//        int result = new Solution().solution(5, new int[]{1,3,1,4,2,3,5,4});
-//        int result = new Solution().solution(1, new int[]{1});
-        int result = new Solution().solution(3, new int[]{1, 3, 1, 3, 2, 1, 3});
-        System.out.println(result);
+    @Test
+    public void test() {
+        assertEquals(6, solution(5, new int[]{1,3,1,4,2,3,5,4}));
+        assertEquals(0, solution(1, new int[]{1}));
+        assertEquals(4, solution(3, new int[]{1, 3, 1, 3, 2, 1, 3}));
     }
 }
